@@ -1,0 +1,6 @@
+[
+  {"category": "A", "count": 5, "price": 10.5},
+  {"category": "B", "count": 3, "price": 7.25},
+  {"category": "A", "count": 2, "price": 9.0},
+  {"category": "C", "count": 8, "price": 12.0}
+]
