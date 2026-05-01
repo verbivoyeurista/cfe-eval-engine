@@ -1,0 +1,4 @@
+[
+  {"category": "Completeness", "count": 5, "price": 10.5, "id": "r1"},
+  {"category": "Correctness", "count": 3, "price": 7.25, "id": "r2"}
+]

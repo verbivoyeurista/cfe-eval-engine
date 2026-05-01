@@ -1,0 +1,8 @@
+{
+  "categories": [
+    {"id": "c1", "name": "Completeness"},
+    {"id": "c2", "name": "Correctness"},
+    {"id": "c3", "name": "Relevance"}
+  ],
+  "metrics": ["score", "confidence"]
+}
