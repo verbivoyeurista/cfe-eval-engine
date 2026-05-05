@@ -7,3 +7,10 @@ __pycache__/
 .env
 /.idea/
 /.vscode/
+
+# Local data -- never push
+data/evaluated/
+data/gathered/
+data/runs/
+data/validation/
+data/samples/
