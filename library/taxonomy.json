@@ -1,0 +1,60 @@
+{
+  "version": "0.4",
+  "total_factors": 29,
+  "tiers": {
+    "established_risk": {
+      "score_type": "accuracy",
+      "question": "Did the system catch what it's supposed to catch?",
+      "audience": "Auditors"
+    },
+    "emergent_risk": {
+      "score_type": "coverage",
+      "question": "Is the system looking for it?",
+      "audience": "System owners"
+    },
+    "projected_risk": {
+      "score_type": "readiness",
+      "question": "Is the system prepared for what's coming?",
+      "audience": "Policy and legal"
+    }
+  },
+  "factors": [
+    {"id": "purpose_limitation", "tier": "established_risk", "name": "Purpose Limitation", "definition": "Data used only for stated purpose. No secondary use without justification.", "system_category": "Purpose Limitation"},
+    {"id": "fairness", "tier": "established_risk", "name": "Fairness", "definition": "Age thresholds, accessibility, non-discrimination across protected categories.", "system_category": "FAIRNESS"},
+    {"id": "consent", "tier": "established_risk", "name": "Consent", "definition": "User permission obtained before processing. Collection, frequency, withdrawal.", "system_category": "TRANSPARENCY_CONTROL__CONSENT"},
+    {"id": "data_collection_minimization", "tier": "established_risk", "name": "Data Collection Minimization", "definition": "Data collected limited to what is necessary.", "system_category": "DATA_MINIMIZATION__COLLECTION"},
+    {"id": "user_settings", "tier": "established_risk", "name": "User Settings & Controls", "definition": "Product respects existing user choices for privacy and visibility.", "system_category": "TRANSPARENCY_CONTROL__SETTINGS"},
+    {"id": "notice", "tier": "established_risk", "name": "Notice & Disclosure", "definition": "Users informed via privacy policies, first-time notices, in-product disclosures.", "system_category": "TRANSPARENCY_CONTROL__NOTICE"},
+    {"id": "internal_security", "tier": "established_risk", "name": "Internal Security", "definition": "Data protected by access controls, encryption, internal security measures.", "system_category": "SECURITY_INTERNAL"},
+    {"id": "external_sharing", "tier": "established_risk", "name": "External Data Sharing", "definition": "Controls on sharing data with third-party vendors, advertisers, partners.", "system_category": "SECURITY__EXTERNAL_SHARING"},
+    {"id": "external_use", "tier": "established_risk", "name": "External Data Use", "definition": "Controls on how external parties use data received from Meta. Anti-scraping.", "system_category": "SECURITY__EXTERNAL_USE"},
+    {"id": "data_retention", "tier": "established_risk", "name": "Data Retention", "definition": "Data retained for defined period with stated justification. Deletion triggers.", "system_category": "DATA_RETENTION"},
+    {"id": "deletion", "tier": "established_risk", "name": "Deletion", "definition": "Product respects user and account deletion requests.", "system_category": "ACCESS_MANAGEMENT__DELETION"},
+    {"id": "visibility", "tier": "established_risk", "name": "Audience Visibility", "definition": "Users understand who can see their data before it becomes visible.", "system_category": "TRANSPARENCY_CONTROL__VISIBILITY"},
+    {"id": "data_creation_minimization", "tier": "established_risk", "name": "Data Creation Minimization", "definition": "No new data created or derived beyond necessity.", "system_category": "DATA_MINIMIZATION__CREATION"},
+    {"id": "user_access", "tier": "established_risk", "name": "User Access & Portability", "definition": "Users can access, download, and review data collected about them.", "system_category": "ACCESS_MANAGEMENT__ACCESS"},
+    {"id": "genai_safety", "tier": "emergent_risk", "name": "GenAI Safety", "definition": "GenAI outputs comply with policies, watermarks, adversarial testing.", "stage": "recommended"},
+    {"id": "integrity_enforcement", "tier": "emergent_risk", "name": "Integrity & Enforcement", "definition": "Content reviewed for violations. Users notified and can dispute decisions.", "stage": "recommended"},
+    {"id": "adm", "tier": "emergent_risk", "name": "Automated Decision-Making", "definition": "Systems making or influencing decisions about users without human review.", "stage": "emerging"},
+    {"id": "cross_border_transfer", "tier": "emergent_risk", "name": "Cross-border Transfer", "definition": "User data moves across jurisdictional boundaries.", "stage": "emerging"},
+    {"id": "profiling_inference", "tier": "emergent_risk", "name": "Profiling & Inference", "definition": "Deriving new data about users from existing data.", "stage": "emerging", "boundary": "Evaluates WHETHER new data is created, not whether the underlying use was authorized (see purpose_limitation)."},
+    {"id": "precise_geolocation", "tier": "emergent_risk", "name": "Precise Geolocation", "definition": "Collection or use of precise location data (GPS, Wi-Fi, IP-based).", "stage": "emerging"},
+    {"id": "health_data", "tier": "emergent_risk", "name": "Health & Wellness Data", "definition": "Collection or processing of health, medical, fitness, or wellness data.", "stage": "emerging"},
+    {"id": "protected_characteristics", "tier": "emergent_risk", "name": "Protected Characteristics", "definition": "Processing racial, ethnic, religious, political, sexual orientation, or genetic data.", "stage": "emerging"},
+    {"id": "ai_training_data", "tier": "emergent_risk", "name": "AI Training Data Governance", "definition": "Constraints on what data can be used for model training.", "stage": "emerging"},
+    {"id": "user_appeals", "tier": "emergent_risk", "name": "User Appeals & Recourse", "definition": "Users can report content, dispute decisions, receive notice of enforcement.", "stage": "emerging"},
+    {"id": "eu_ai_act_risk_classification", "tier": "projected_risk", "name": "EU AI Act Risk Classification", "definition": "AI systems classified by risk level. High-risk requires conformity assessments.", "regulation": "EU AI Act Arts 6-7"},
+    {"id": "right_to_explanation", "tier": "projected_risk", "name": "Right to Explanation", "definition": "Users have right to meaningful info about logic in automated decisions.", "regulation": "GDPR Art 22, DSA Art 27"},
+    {"id": "data_sovereignty", "tier": "projected_risk", "name": "Data Sovereignty & Localization", "definition": "Regulations requiring data stored/processed within national boundaries.", "regulation": "India DPDP, China PIPL"},
+    {"id": "algorithmic_auditing", "tier": "projected_risk", "name": "Algorithmic Auditing", "definition": "Independent audits of algorithmic systems.", "regulation": "DSA Arts 37-40, NYC LL 144"},
+    {"id": "children_by_design", "tier": "projected_risk", "name": "Children's Safety by Design", "definition": "Products accessed by children must implement safety by design.", "regulation": "UK AADC, KOSA"}
+  ],
+  "lifecycle": {
+    "stages": ["observed", "emerging", "recommended", "established"],
+    "graduation_thresholds": {
+      "emerging": "5+ unique reviews",
+      "recommended": "25+ reviews with evidence package",
+      "established": "System has built requirements and dedicated category"
+    }
+  }
+}
